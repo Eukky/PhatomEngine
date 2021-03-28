@@ -1,5 +1,0 @@
-/Users/wyr/Desktop/Phatom/build/CMakeFiles/rebuild_cache.dir
-/Users/wyr/Desktop/Phatom/build/CMakeFiles/edit_cache.dir
-/Users/wyr/Desktop/Phatom/build/CMakeFiles/package_source.dir
-/Users/wyr/Desktop/Phatom/build/CMakeFiles/package.dir
-/Users/wyr/Desktop/Phatom/build/CMakeFiles/Phatom.dir
