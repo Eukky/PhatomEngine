@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>ACD3BF61-CA84-478D-A7D0-A305FD61A738</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>ACD3BF61-CA84-478D-A7D0-A305FD61A738.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Phatom project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Phatom</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Phatom</string>
+			<key>timeStartedRecording</key>
+			<real>638025951.60025704</real>
+			<key>timeStoppedRecording</key>
+			<real>638025965.55912495</real>
+			<key>title</key>
+			<string>Run Phatom</string>
+			<key>uniqueIdentifier</key>
+			<string>ACD3BF61-CA84-478D-A7D0-A305FD61A738</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

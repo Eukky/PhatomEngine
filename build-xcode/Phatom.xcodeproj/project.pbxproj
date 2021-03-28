@@ -1,0 +1,891 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		07856226B46148408BF67DF0 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 5681716118F34587B35CF8D7 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				A90154EDBBD045B89C68F81A /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				2E23E7C878164A5489BECF49 /* PBXTargetDependency */,
+				A41C77FE95B44B19A05E6634 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		DEE84597E9454EC6AE58313C /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B9A2D461FDB54EC28401BE97 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				4C06E70EAB64452FAF3189D1 /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		E2A1635770874B1993B67DF6 /* package */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4E1EDB23A52E45A9B1D6378E /* Build configuration list for PBXAggregateTarget "package" */;
+			buildPhases = (
+				0463B8EEAFAD41608A043242 /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				F0F94182BCB546768024F7EE /* PBXTargetDependency */,
+			);
+			name = package;
+			productName = package;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		129C8D015D714B9F86FB5DF2 /* /Users/wyr/Desktop/Phatom/Core/src/main.cpp */ = {isa = PBXBuildFile; fileRef = 31FFCDA629D8424AB29EDFEE /* /Users/wyr/Desktop/Phatom/Core/src/main.cpp */; };
+		2F35402939CD42BBAB60F9D7 /* /Users/wyr/Desktop/Phatom/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 4C3BC7BA69C143EBB39173FF /* /Users/wyr/Desktop/Phatom/CMakeLists.txt */; };
+		66572D3F9CAE47698DABBEDC /* /Users/wyr/Desktop/Phatom/Core/include/test.h */ = {isa = PBXBuildFile; fileRef = 5A638832865446CC8EEDFB7B /* /Users/wyr/Desktop/Phatom/Core/include/test.h */; };
+		CE13DA35858B4825B36E89B7 /* /Users/wyr/Desktop/Phatom/Core/src/test.cpp */ = {isa = PBXBuildFile; fileRef = E52173D11F164B169C57EECE /* /Users/wyr/Desktop/Phatom/Core/src/test.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		5B32092D8BB94882907D73E3 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		76544FD9092B4FA281E72CA4 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		CC06E97571784C778B113C12 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		E00319737F3E4EA996424949 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		06E75BCE689548B2B5107789 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B583C37AB264E8FA791A208 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEE84597E9454EC6AE58313C;
+			remoteInfo = ZERO_CHECK;
+		};
+		77228D37295946518575BB27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B583C37AB264E8FA791A208 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEE84597E9454EC6AE58313C;
+			remoteInfo = ZERO_CHECK;
+		};
+		C0750B910E37443784A3C4FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B583C37AB264E8FA791A208 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07856226B46148408BF67DF0;
+			remoteInfo = ALL_BUILD;
+		};
+		EE8FD333E43D4346BE2A27F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B583C37AB264E8FA791A208 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0DF61C56B5C4905A8F2A48F;
+			remoteInfo = Phatom;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2A0459F3739044328298EE23 /* /Users/wyr/Desktop/Phatom/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		31FFCDA629D8424AB29EDFEE /* /Users/wyr/Desktop/Phatom/Core/src/main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = Core/src/main.cpp; sourceTree = SOURCE_ROOT; };
+		4C3BC7BA69C143EBB39173FF /* /Users/wyr/Desktop/Phatom/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		5A638832865446CC8EEDFB7B /* /Users/wyr/Desktop/Phatom/Core/include/test.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = test.h; path = Core/include/test.h; sourceTree = SOURCE_ROOT; };
+		6A3C0EA25D2C4E3F8971D5B2 /* Phatom */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = Phatom; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52173D11F164B169C57EECE /* /Users/wyr/Desktop/Phatom/Core/src/test.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = test.cpp; path = Core/src/test.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE8519F6C8BA47C69283FC34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2320A483851944BCBB7398F9 = {
+			isa = PBXGroup;
+			children = (
+				9032D83779A04839B35591FD /* Phatom */,
+				53E8D6359E0F453F83B7C1D9 /* ALL_BUILD */,
+				A0071F19F1CD4942A2053B45 /* Products */,
+				EF2CA44CD41741C6BD678325 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		45BCBB2B4C154AC3AC8BC844 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A638832865446CC8EEDFB7B /* /Users/wyr/Desktop/Phatom/Core/include/test.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		53E8D6359E0F453F83B7C1D9 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				69DD021636D245A9820DA9D5 /* CMake Rules */,
+				2A0459F3739044328298EE23 /* /Users/wyr/Desktop/Phatom/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		69C239B7C07E4A14A323EA97 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				31FFCDA629D8424AB29EDFEE /* /Users/wyr/Desktop/Phatom/Core/src/main.cpp */,
+				E52173D11F164B169C57EECE /* /Users/wyr/Desktop/Phatom/Core/src/test.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		69DD021636D245A9820DA9D5 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		9032D83779A04839B35591FD /* Phatom */ = {
+			isa = PBXGroup;
+			children = (
+				69C239B7C07E4A14A323EA97 /* Source Files */,
+				45BCBB2B4C154AC3AC8BC844 /* Header Files */,
+				4C3BC7BA69C143EBB39173FF /* /Users/wyr/Desktop/Phatom/CMakeLists.txt */,
+			);
+			name = Phatom;
+			sourceTree = "<group>";
+		};
+		A0071F19F1CD4942A2053B45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A3C0EA25D2C4E3F8971D5B2 /* Phatom */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF2CA44CD41741C6BD678325 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E0DF61C56B5C4905A8F2A48F /* Phatom */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 401E333636224100A0E233FA /* Build configuration list for PBXNativeTarget "Phatom" */;
+			buildPhases = (
+				E982BFA0D0F4464DB205A302 /* Sources */,
+				CE8519F6C8BA47C69283FC34 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42F766DA450B42AD8FCB353F /* PBXTargetDependency */,
+			);
+			name = Phatom;
+			productName = Phatom;
+			productReference = 6A3C0EA25D2C4E3F8971D5B2 /* Phatom */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B583C37AB264E8FA791A208 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 0A84BDAF051F4E888E4C88C7 /* Build configuration list for PBXProject "Phatom" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				76544FD9092B4FA281E72CA4 /* Debug */,
+				5B32092D8BB94882907D73E3 /* Release */,
+				E00319737F3E4EA996424949 /* MinSizeRel */,
+				CC06E97571784C778B113C12 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 2320A483851944BCBB7398F9;
+			projectDirPath = ../;
+			projectRoot = "";
+			targets = (
+				07856226B46148408BF67DF0 /* ALL_BUILD */,
+				E0DF61C56B5C4905A8F2A48F /* Phatom */,
+				DEE84597E9454EC6AE58313C /* ZERO_CHECK */,
+				E2A1635770874B1993B67DF6 /* package */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0463B8EEAFAD41608A043242 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/wyr/Desktop/Phatom/build-xcode
+  /usr/local/Cellar/cmake/3.19.1/bin/cpack -C $CONFIGURATION$EFFECTIVE_PLATFORM_NAME --config ./CPackConfig.cmake
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/wyr/Desktop/Phatom/build-xcode
+  /usr/local/Cellar/cmake/3.19.1/bin/cpack -C $CONFIGURATION$EFFECTIVE_PLATFORM_NAME --config ./CPackConfig.cmake
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/wyr/Desktop/Phatom/build-xcode
+  /usr/local/Cellar/cmake/3.19.1/bin/cpack -C $CONFIGURATION$EFFECTIVE_PLATFORM_NAME --config ./CPackConfig.cmake
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/wyr/Desktop/Phatom/build-xcode
+  /usr/local/Cellar/cmake/3.19.1/bin/cpack -C $CONFIGURATION$EFFECTIVE_PLATFORM_NAME --config ./CPackConfig.cmake
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		4C06E70EAB64452FAF3189D1 /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+"/Users/wyr/Desktop/Phatom/build-xcode/CMakeFiles/ZERO_CHECK"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/wyr/Desktop/Phatom/build-xcode
+  make -f /Users/wyr/Desktop/Phatom/build-xcode/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/wyr/Desktop/Phatom/build-xcode
+  make -f /Users/wyr/Desktop/Phatom/build-xcode/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/wyr/Desktop/Phatom/build-xcode
+  make -f /Users/wyr/Desktop/Phatom/build-xcode/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/wyr/Desktop/Phatom/build-xcode
+  make -f /Users/wyr/Desktop/Phatom/build-xcode/CMakeScripts/ReRunCMake.make
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		87823A911FB24FACBF9ABB89 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		A90154EDBBD045B89C68F81A /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+"/Users/wyr/Desktop/Phatom/build-xcode/CMakeFiles/ALL_BUILD"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/wyr/Desktop/Phatom/build-xcode
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/wyr/Desktop/Phatom/build-xcode
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/wyr/Desktop/Phatom/build-xcode
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/wyr/Desktop/Phatom/build-xcode
+  echo Build\\ all\\ projects
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		BDAE8DCE66CA4C0484057A40 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		EF3D5A3A01A1472590760F5C = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E982BFA0D0F4464DB205A302 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				129C8D015D714B9F86FB5DF2 /* /Users/wyr/Desktop/Phatom/Core/src/main.cpp */,
+				CE13DA35858B4825B36E89B7 /* /Users/wyr/Desktop/Phatom/Core/src/test.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2E23E7C878164A5489BECF49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0DF61C56B5C4905A8F2A48F /* Phatom */;
+			targetProxy = EE8FD333E43D4346BE2A27F0 /* PBXContainerItemProxy */;
+		};
+		42F766DA450B42AD8FCB353F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEE84597E9454EC6AE58313C /* ZERO_CHECK */;
+			targetProxy = 06E75BCE689548B2B5107789 /* PBXContainerItemProxy */;
+		};
+		A41C77FE95B44B19A05E6634 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEE84597E9454EC6AE58313C /* ZERO_CHECK */;
+			targetProxy = 77228D37295946518575BB27 /* PBXContainerItemProxy */;
+		};
+		F0F94182BCB546768024F7EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07856226B46148408BF67DF0 /* ALL_BUILD */;
+			targetProxy = C0750B910E37443784A3C4FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0D83E901C32E43E380B50F82 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		2CAE6C0662AE4C44BA9D70D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode/build";
+			};
+			name = Debug;
+		};
+		2DC542D529224B4FAC6B5C7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		3DB0E208C73B499A8D93FC85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = ("$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/wyr/Desktop/Phatom/Core/include);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = ("$(inherited)");
+				OTHER_CPLUSPLUSFLAGS = "   '-std=gnu++2a' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/usr/local/lib/libvulkan.dylib,/usr/local/lib/libglfw.3.3.dylib);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Phatom;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode";
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		3EBFD1076F0A4D3497D42C9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = ("$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/wyr/Desktop/Phatom/Core/include);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = ("$(inherited)");
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=gnu++2a' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/usr/local/lib/libvulkan.dylib,/usr/local/lib/libglfw.3.3.dylib);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Phatom;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode";
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		650D2E6EF5FA44339F21E8BF /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		6727FBB11120404988FB723C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		7A3C004A7ED944C1B0DF5148 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode/build";
+			};
+			name = MinSizeRel;
+		};
+		8698E439EC9A4833A1FDFBEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode/build";
+			};
+			name = Release;
+		};
+		8D481882CFB5463995BF5449 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		96D5BB9B1D1B416B8AB177EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		B757131101354357A2550EA3 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		B9324627833A41F8A6F26DED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		C1E122FB996C4DEF9720D6A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		C3C5A5580B64483D9069A5D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		C4FC0F0E58CC48BFBC37C149 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		E096E1A3410B46EBB2FB26D7 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = ("$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/wyr/Desktop/Phatom/Core/include);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = ("$(inherited)");
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG '-std=gnu++2a' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/usr/local/lib/libvulkan.dylib,/usr/local/lib/libglfw.3.3.dylib);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Phatom;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode";
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		E8D219405A754A7A8697E7C9 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		FA95880908444C0D92D43D3C /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode/build";
+			};
+			name = RelWithDebInfo;
+		};
+		FF498501303B42D9B65C8913 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = ("$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/wyr/Desktop/Phatom/Core/include);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = ("$(inherited)");
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=gnu++2a' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/usr/local/lib/libvulkan.dylib,/usr/local/lib/libglfw.3.3.dylib);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Phatom;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/wyr/Desktop/Phatom/build-xcode";
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A84BDAF051F4E888E4C88C7 /* Build configuration list for PBXProject "Phatom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CAE6C0662AE4C44BA9D70D3 /* Debug */,
+				8698E439EC9A4833A1FDFBEC /* Release */,
+				7A3C004A7ED944C1B0DF5148 /* MinSizeRel */,
+				FA95880908444C0D92D43D3C /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		401E333636224100A0E233FA /* Build configuration list for PBXNativeTarget "Phatom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DB0E208C73B499A8D93FC85 /* Debug */,
+				3EBFD1076F0A4D3497D42C9F /* Release */,
+				FF498501303B42D9B65C8913 /* MinSizeRel */,
+				E096E1A3410B46EBB2FB26D7 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4E1EDB23A52E45A9B1D6378E /* Build configuration list for PBXAggregateTarget "package" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6727FBB11120404988FB723C /* Debug */,
+				2DC542D529224B4FAC6B5C7C /* Release */,
+				B757131101354357A2550EA3 /* MinSizeRel */,
+				E8D219405A754A7A8697E7C9 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5681716118F34587B35CF8D7 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9324627833A41F8A6F26DED /* Debug */,
+				C1E122FB996C4DEF9720D6A9 /* Release */,
+				C4FC0F0E58CC48BFBC37C149 /* MinSizeRel */,
+				0D83E901C32E43E380B50F82 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B9A2D461FDB54EC28401BE97 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3C5A5580B64483D9069A5D9 /* Debug */,
+				96D5BB9B1D1B416B8AB177EB /* Release */,
+				8D481882CFB5463995BF5449 /* MinSizeRel */,
+				650D2E6EF5FA44339F21E8BF /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5B583C37AB264E8FA791A208 /* Project object */;
+}

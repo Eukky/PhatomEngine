@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>205E7E1E-222B-4F18-B03C-E5BDBAE10470</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.target</string>
+			<key>fileName</key>
+			<string>205E7E1E-222B-4F18-B03C-E5BDBAE10470.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>ZERO_CHECK-gjynhtgpzshmfdfzpndcvtdmmhsb</string>
+			<key>timeStartedRecording</key>
+			<real>638025950.69105005</real>
+			<key>timeStoppedRecording</key>
+			<real>638025950.73497701</real>
+			<key>title</key>
+			<string>Build target ZERO_CHECK</string>
+			<key>uniqueIdentifier</key>
+			<string>205E7E1E-222B-4F18-B03C-E5BDBAE10470</string>
+		</dict>
+		<key>CC5B934C-7540-47FD-ACE2-4455F37D3511</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.tool</string>
+			<key>fileName</key>
+			<string>CC5B934C-7540-47FD-ACE2-4455F37D3511.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>Phatom-gjynhtgpzshmfdfzpndcvtdmmhsb</string>
+			<key>timeStartedRecording</key>
+			<real>638025950.69024801</real>
+			<key>timeStoppedRecording</key>
+			<real>638025951.57281399</real>
+			<key>title</key>
+			<string>Build target Phatom</string>
+			<key>uniqueIdentifier</key>
+			<string>CC5B934C-7540-47FD-ACE2-4455F37D3511</string>
+		</dict>
+	</dict>
+	<key>preserveOldLogs</key>
+	<true/>
+</dict>
+</plist>
