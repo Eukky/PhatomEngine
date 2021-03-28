@@ -1,4 +1,0 @@
-/Users/wyr/Desktop/Phatom/build-xcode/CMakeFiles/package.dir
-/Users/wyr/Desktop/Phatom/build-xcode/CMakeFiles/Phatom.dir
-/Users/wyr/Desktop/Phatom/build-xcode/CMakeFiles/ALL_BUILD.dir
-/Users/wyr/Desktop/Phatom/build-xcode/CMakeFiles/ZERO_CHECK.dir
