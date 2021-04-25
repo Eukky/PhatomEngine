@@ -26,7 +26,7 @@ bool TextFileReader::IsOpen() {
 }
 
 std::string TextFileReader::ReadLine() {
-    if(!IsOpen() || IsEOF()) {
+    if (!IsOpen() || IsEOF()) {
         return "";
     }
     std::string line;
@@ -37,15 +37,15 @@ std::string TextFileReader::ReadLine() {
         line.push_back(ch);
         ch = fgetc(mFile.GetFilePointer());
     }
-    if(ch != EOF) {
-        if(ch == '\r') {
+    if (ch != EOF) {
+        if (ch == '\r') {
             ch = fgetc(mFile.GetFilePointer());
-            if(ch != EOF && ch != '\n') {
+            if (ch != EOF && ch != '\n') {
                 ungetc(ch, mFile.GetFilePointer());
             }
         } else {
             ch = fgetc(mFile.GetFilePointer());
-            if(ch != EOF) {
+            if (ch != EOF) {
                 ungetc(ch, mFile.GetFilePointer());
             }
         }
@@ -55,7 +55,7 @@ std::string TextFileReader::ReadLine() {
 
 void TextFileReader::ReadAllLines(std::vector<std::string>& lines) {
     lines.clear();
-    if(!IsOpen() || IsEOF()) {
+    if (!IsOpen() || IsEOF()) {
         return;
     }
     while(!IsEOF()) {
@@ -65,7 +65,7 @@ void TextFileReader::ReadAllLines(std::vector<std::string>& lines) {
 
 std::string TextFileReader::ReadAll() {
     std::string all;
-    if(IsOpen()) {
+    if (IsOpen()) {
         int ch = fgetc(mFile.GetFilePointer());
         while(ch != EOF) {
             all.push_back(ch);
@@ -76,7 +76,7 @@ std::string TextFileReader::ReadAll() {
 }
 
 bool TextFileReader::IsEOF() {
-    if(!IsOpen()) {
+    if (!IsOpen()) {
         return false;
     }
     return mFile.IsEOF();

@@ -10,18 +10,18 @@ File::~File() {
 }
 
 bool File::OpenFile(const char* filePath, const char* mode) {
-    if(mFilePtr != nullptr) {
+    if (mFilePtr != nullptr) {
         Close();
     }
     mFilePtr = fopen(filePath, mode);
-    if(mFilePtr == nullptr) {
+    if (mFilePtr == nullptr) {
         return false;
     }
     ClearBadFlag();
     Seek(0, SeekDir::End);
     mFileSize = Tell();
     Seek(0, SeekDir::Begin);
-    if(IsBad()) {
+    if (IsBad()) {
         Close();
         return false;
     }
@@ -61,7 +61,7 @@ bool File::CreateText(const std::string& filePath) {
 }
 
 void File::Close() {
-    if(mFilePtr != nullptr) {
+    if (mFilePtr != nullptr) {
         fclose(mFilePtr);
         mFilePtr = nullptr;
         mFileSize = 0;
@@ -94,43 +94,43 @@ FILE* File::GetFilePointer() const {
 }
 
 bool File::ReadAll(std::vector<char>* buffer) {
-    if(buffer == nullptr) {
+    if (buffer == nullptr) {
         return false;
     }
     buffer->resize(mFileSize);
     Seek(0, SeekDir::Begin);
-    if(!Read((*buffer).data(), mFileSize)) {
+    if (!Read((*buffer).data(), mFileSize)) {
         return false;
     }
     return true;
 }
 
 bool File::ReadAll(std::vector<int8_t>* buffer) {
-    if(buffer == nullptr) {
+    if (buffer == nullptr) {
         return false;
     }
     buffer->resize(mFileSize);
     Seek(0, SeekDir::Begin);
-    if(!Read((*buffer).data(), mFileSize)) {
+    if (!Read((*buffer).data(), mFileSize)) {
         return false;
     }
     return true;
 }
 
 bool File::ReadAll(std::vector<uint8_t>* buffer) {
-    if(buffer == nullptr) {
+    if (buffer == nullptr) {
         return false;
     }
     buffer->resize(mFileSize);
     Seek(0, SeekDir::Begin);
-    if(!Read((*buffer).data(), mFileSize)) {
+    if (!Read((*buffer).data(), mFileSize)) {
         return false;
     }
     return true;
 }
 
 bool File::Seek(int64_t offset, SeekDir origin) {
-    if(mFilePtr == nullptr) {
+    if (mFilePtr == nullptr) {
         return false;
     }
     int cOrigin = 0;
@@ -150,7 +150,7 @@ bool File::Seek(int64_t offset, SeekDir origin) {
         default:
             return false;
     }
-    if(fseek(mFilePtr, offset, cOrigin) != 0) {
+    if (fseek(mFilePtr, offset, cOrigin) != 0) {
         mBadFlag = true;
         return false;
     }
@@ -158,7 +158,7 @@ bool File::Seek(int64_t offset, SeekDir origin) {
 }
 
 int64_t File::Tell() {
-    if(mFilePtr == nullptr) {
+    if (mFilePtr == nullptr) {
         return -1;
     }
     return (int64_t)ftell(mFilePtr);

@@ -47,13 +47,13 @@ public:
 
     template <typename T>
     bool Read(T* buffer, size_t count = 1) {
-        if(buffer == nullptr) {
+        if (buffer == nullptr) {
             return false;
         }
-        if(!IsOpen()){
+        if (!IsOpen()){
             return false;
         }
-        if(fread(buffer, sizeof(T), count, mFilePtr) != count){
+        if (fread(buffer, sizeof(T), count, mFilePtr) != count){
             mBadFlag = true;
             return false;
         }
@@ -62,13 +62,13 @@ public:
 
     template <typename T> 
     bool Write(T* buffer, size_t count = 1) {
-        if(buffer == nullptr) {
+        if (buffer == nullptr) {
             return false;
         }
-        if(!IsOpen()){
+        if (!IsOpen()){
             return false;
         }
-        if(fwrite(buffer, sizeof(T), count, mFilePtr) != count) {
+        if (fwrite(buffer, sizeof(T), count, mFilePtr) != count) {
             mBadFlag = true;
             return false;
         }

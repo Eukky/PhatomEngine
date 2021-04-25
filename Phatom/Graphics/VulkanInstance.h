@@ -1,3 +1,6 @@
+#ifndef PHATOM_VULKANINSTANCE_H
+#define PHATOM_VULKANINSTANCE_H
+
 #include <vulkan/vulkan.h>
 #include <GLFW/glfw3.h>
 
@@ -28,11 +31,13 @@
 #include <set>
 #include <unordered_map>
 
+// namespace phatom {
+
 const uint32_t WIDTH = 800;
 const uint32_t HEIGHT = 600;
 
-const std::string MODEL_PATH = "Resource/models/viking_room.obj";
-const std::string TEXTURE_PATH = "Resource/textures/viking_room.png";
+const std::string MODEL_PATH = "../Resource/models/viking_room.obj";
+const std::string TEXTURE_PATH = "../Resource/textures/viking_room.png";
 
 const int MAX_FRAMES_IN_FLIGHT = 2;
 
@@ -151,9 +156,28 @@ struct UniformBufferObject {
 //     0, 1, 2, 2, 3, 0,
 //     4, 5, 6, 6, 7, 4
 // };
-
+namespace phatom {
 class HelloTriangleApplication {
 public:
+    void setVertices(std::vector<glm::vec3> position) {
+        int size = position.size();
+        for(const auto& p : position) {
+            Vertex v;
+            v.pos = p;
+            v.color = glm::vec3(1, 1, 1);
+            v.texCoord = glm::vec2(1, 1);
+            vertices.push_back(v);
+        }
+    }
+
+    void setIndices(std::vector<uint16_t> ind) {
+        int size = ind.size();
+        indices.resize(size);
+        for(int i = 0; i < size; ++i) {
+            indices[i] = (uint32_t)ind[i];
+        }
+    }
+
     void run() {
         initWindow();
         initVulkan();
@@ -259,7 +283,7 @@ private:
         createTextureImage();
         createTextureImageView();
         createTextureSampler();
-        loadModel();
+        // loadModel();
         createVertexBuffer();
         createIndexBuffer();
         createUniformBuffers();
@@ -669,8 +693,8 @@ private:
     }
 
     void createGraphicsPipeline() {
-        auto vertShaderCode = readFile("Resource/shaders/vert.spv");
-        auto fragShaderCode = readFile("Resource/shaders/frag.spv");
+        auto vertShaderCode = readFile("../Resource/shaders/vert.spv");
+        auto fragShaderCode = readFile("../Resource/shaders/frag.spv");
 
         VkShaderModule vertShaderModule = createShaderModule(vertShaderCode);
         VkShaderModule fragShaderModule = createShaderModule(fragShaderCode);
@@ -1488,9 +1512,9 @@ private:
         float time = std::chrono::duration<float, std::chrono::seconds::period>(currentTime - startTime).count();
 
         UniformBufferObject ubo{};
-        ubo.model = glm::rotate(glm::mat4(1.0f), time * glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
-        ubo.view = glm::lookAt(glm::vec3(2.0f, 2.0f, 2.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
-        ubo.proj = glm::perspective(glm::radians(45.0f), swapChainExtent.width / (float) swapChainExtent.height, 0.1f, 10.0f);
+        ubo.model = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f, 0.1f, 0.1f));
+        ubo.view = glm::lookAt(glm::vec3(0.0f, 0.0f, 4.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        ubo.proj = glm::perspective(glm::radians(60.0f), swapChainExtent.width / (float) swapChainExtent.height, 0.1f, 10.0f);
         ubo.proj[1][1] *= -1;
 
         void* data;
@@ -1770,16 +1794,8 @@ private:
         return VK_FALSE;
     }
 };
+    
+} // namespace phatom
 
-int main() {
-    HelloTriangleApplication app;
 
-    try {
-        app.run();
-    } catch (const std::exception& e) {
-        std::cerr << e.what() << std::endl;
-        return EXIT_FAILURE;
-    }
-
-    return EXIT_SUCCESS;
-}
+#endif //PHATOM_VULKANINSTANCE_H
