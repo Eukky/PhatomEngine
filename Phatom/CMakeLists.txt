@@ -10,9 +10,11 @@ set(COMMON_FILES
 
 set(CORE_FILES 
     Core/Window.h
+    Core/Application.h
 
     Core/PhatomMain.cpp
-    Core/Window.cpp)
+    Core/Window.cpp
+    Core/Application.cpp)
 
 set(MMD_FILES 
     Model/MMD/PMXFile.h

@@ -1,7 +1,9 @@
-#include "Graphics/VulkanInstance.h"
+//#include "Graphics/VulkanInstance.h"
 #include "Model/MMD/PMXFile.h"
+#include "Core/Application.h"
 
 using namespace phatom;
+
 int main() {
     
     PMXFile *pmx = new PMXFile();
@@ -45,7 +47,7 @@ int main() {
         break;
     }
 
-     phatom::HelloTriangleApplication app;
+     phatom::Application app;
 
      app.setVertices(positions);
      app.setIndices(indices);
@@ -56,7 +58,7 @@ int main() {
          std::cerr << e.what() << std::endl;
          return EXIT_FAILURE;
      }
-    
+
 
     return EXIT_SUCCESS;
 }
