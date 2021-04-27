@@ -47,18 +47,18 @@ int main() {
         break;
     }
 
-     phatom::Application app;
+    Application *app = new Application();
 
-     app.setVertices(positions);
-     app.setIndices(indices);
+    app->setVertices(positions);
+    app->setIndices(indices);
 
-     try {
-         app.run();
-     } catch (const std::exception& e) {
-         std::cerr << e.what() << std::endl;
-         return EXIT_FAILURE;
-     }
+    try {
+        app->run();
+    } catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
+        return EXIT_FAILURE;
+    }
 
-
+    delete app;
     return EXIT_SUCCESS;
 }

@@ -11,10 +11,12 @@ set(COMMON_FILES
 set(CORE_FILES 
     Core/Window.h
     Core/Application.h
+    Core/Camera.h
 
     Core/PhatomMain.cpp
     Core/Window.cpp
-    Core/Application.cpp)
+    Core/Application.cpp
+    Core/Camera.cpp)
 
 set(MMD_FILES 
     Model/MMD/PMXFile.h
@@ -26,6 +28,7 @@ set(MMD_FILES
 set(GRAPHICS_FILES 
     Graphics/VulkanDevice.h
     Graphics/VulkanInstance.h
+    
     Graphics/VulkanDevice.cpp
     Graphics/VulkanInstance.cpp)
 
