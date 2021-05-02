@@ -1,5 +1,5 @@
 #include "VulkanDevice.h"
-
+#include "Common/Log.h"
 #include <string>
 namespace phatom {
 VulkanDevice::VulkanDevice(VulkanPhysicalDevice &gpu, VkSurfaceKHR surface, std::unordered_map<const char*, bool> requestedExtensions, std::vector<const char*> validationLayers) :

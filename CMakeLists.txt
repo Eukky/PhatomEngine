@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 include_directories("./ThirdParty/stb")
 include_directories("./ThirdParty/tiny_obj_loader")
+include_directories("./ThirdParty/spdlog/include")
 
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})

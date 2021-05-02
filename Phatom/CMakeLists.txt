@@ -3,6 +3,7 @@ set(COMMON_FILES
     Common/File.h
     Common/TextFileReader.h
     Common/UnicodeUtil.h
+    Common/Log.h
 
     Common/File.cpp
     Common/TextFileReader.cpp
@@ -18,7 +19,7 @@ set(CORE_FILES
     Core/Application.cpp
     Core/Camera.cpp)
 
-set(MMD_FILES 
+set(MMD_FILES
     Model/MMD/PMXFile.h
     Model/MMD/PMXFileReader.h
     
@@ -29,6 +30,7 @@ set(GRAPHICS_FILES
     Graphics/VulkanDevice.h
     Graphics/VulkanInstance.h
     Graphics/VulkanPhysicalDevice.h
+    Graphics/VulkanConfig.h
     
     Graphics/VulkanDevice.cpp
     Graphics/VulkanInstance.cpp
