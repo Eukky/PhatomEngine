@@ -17,7 +17,7 @@ public:
     VkSurfaceKHR createSurface(VkInstance instance);
     int getWidth();
     int getHeight();
-    GLFWwindow* getHandle();
+    GLFWwindow* getWindow();
     bool shouldClose();
     void processEvents();
     

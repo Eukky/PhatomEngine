@@ -44,7 +44,7 @@ int Window::getHeight() {
     return mHeight;
 }
 
-GLFWwindow* Window::getHandle() {
+GLFWwindow* Window::getWindow() {
     return mWindow;
 }
 

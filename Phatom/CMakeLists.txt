@@ -28,9 +28,11 @@ set(MMD_FILES
 set(GRAPHICS_FILES 
     Graphics/VulkanDevice.h
     Graphics/VulkanInstance.h
+    Graphics/VulkanPhysicalDevice.h
     
     Graphics/VulkanDevice.cpp
-    Graphics/VulkanInstance.cpp)
+    Graphics/VulkanInstance.cpp
+    Graphics/VulkanPhysicalDevice.cpp)
 
 source_group(Common FILES ${COMMON_FILES})
 

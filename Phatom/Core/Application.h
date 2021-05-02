@@ -26,6 +26,8 @@
 #include <unordered_map>
 
 #include "Window.h"
+#include "Graphics/VulkanInstance.h"
+#include "Graphics/VulkanDevice.h"
 
 
 const uint32_t WIDTH = 800;
@@ -150,16 +152,10 @@ private:
     void recreateSwapChain();
 
     void createInstance();
-
-    void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& createInfo);
-
-    void setupDebugMessenger();
     
     void createSurface();
 
-    void pickPhysicalDevice();
-
-    void createLogicalDevice();
+    void createDevice();
 
     void createSwapChain();
 
@@ -261,10 +257,13 @@ private:
 private:
     Window* mWindow;
 
+    VulkanInstance* mInstance;
     VkInstance instance;
     VkDebugUtilsMessengerEXT debugMessenger;
     VkSurfaceKHR surface;
 
+    std::unordered_map<const char *, bool> mDeviceExtensions{{VK_KHR_SWAPCHAIN_EXTENSION_NAME, true}};
+    VulkanDevice* mDevice;
     VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
     VkSampleCountFlagBits msaaSamples = VK_SAMPLE_COUNT_1_BIT;
     VkDevice device;
