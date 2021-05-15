@@ -6,6 +6,7 @@
 #include <unordered_map>
 #include "VulkanInstance.h"
 #include "VulkanPhysicalDevice.h"
+#include "VulkanQueue.h"
 namespace phatom {
 class VulkanDevice {
 public:
@@ -13,7 +14,10 @@ public:
     ~VulkanDevice();
     
     VkDevice getHandle();
-    std::vector<VkQueue> getQueues();
+    std::vector<std::vector<VulkanQueue>> getQueues();
+    VulkanQueue& getQueue(uint32_t queuefamilyIndex, uint32_t queueIndex);
+    VulkanQueue& getQueueByFlags(VkQueueFlags requiredQueueFlags, uint32_t queueIndex);
+    VulkanQueue& getSuitableGraphicsQueue();
 
 private:
     bool isExtensionSupported(const std::string& requestedExtension);
@@ -22,7 +26,8 @@ private:
     VkDevice mHandle;
     VulkanPhysicalDevice &mGPU;
     VkSurfaceKHR mSurface;
-    std::vector<VkQueue> mQueues;
+//    std::vector<VkQueue> mQueues;
+    std::vector<std::vector<VulkanQueue>> mQueues;
     std::vector<VkExtensionProperties> mDeviceExtensions;
     std::vector<const char*> mEnabledExtensions;
 

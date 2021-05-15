@@ -1,6 +1,7 @@
 #include "VulkanDevice.h"
 #include "Common/Log.h"
 #include <string>
+#include "VulkanConfig.h"
 namespace phatom {
 VulkanDevice::VulkanDevice(VulkanPhysicalDevice &gpu, VkSurfaceKHR surface, std::unordered_map<const char*, bool> requestedExtensions, std::vector<const char*> validationLayers) :
 mGPU(gpu),
@@ -68,9 +69,10 @@ mSurface(surface){
     createInfo.enabledLayerCount = static_cast<uint32_t>(validationLayers.size());
     createInfo.ppEnabledLayerNames = validationLayers.data();
 
-    //debug
-    VkPhysicalDeviceFeatures requestedFeature = mGPU.getRequestedFeatures();
-    createInfo.pEnabledFeatures = &requestedFeature;
+    if(kEnableDebug) {
+        VkPhysicalDeviceFeatures requestedFeature = mGPU.getRequestedFeatures();
+        createInfo.pEnabledFeatures = &requestedFeature;
+    }
     
     VkResult result = vkCreateDevice(mGPU.getHandle(), &createInfo, nullptr, &mHandle);
     
@@ -82,13 +84,11 @@ mSurface(surface){
     for(uint32_t queueFamilyIndex = 0; queueFamilyIndex < queueFamilyPropertiesCount; ++queueFamilyIndex) {
         VkQueueFamilyProperties queueFamilyProperty = mGPU.getQueueFamilyProperties()[queueFamilyIndex];
         VkBool32 presentSupported = mGPU.isPresentSupported(mSurface, queueFamilyIndex);
-        if(mSurface != VK_NULL_HANDLE) {
-            vkGetPhysicalDeviceSurfaceSupportKHR(mGPU.getHandle(), queueFamilyIndex, mSurface, &presentSupported);
-        }
+ 
         for(uint32_t queueIndex = 0; queueIndex < queueFamilyProperty.queueCount; ++queueIndex) {
             VkQueue queue{VK_NULL_HANDLE};
             vkGetDeviceQueue(mHandle, queueFamilyIndex, queueIndex, &queue);
-            mQueues[queueFamilyIndex] = queue;
+            mQueues[queueFamilyIndex].emplace_back(queue, queueFamilyIndex, queueIndex, presentSupported, queueFamilyProperty);
         }
     }
     
@@ -102,8 +102,35 @@ VkDevice VulkanDevice::getHandle() {
     return mHandle;
 }
 
-std::vector<VkQueue> VulkanDevice::getQueues() {
+std::vector<std::vector<VulkanQueue>> VulkanDevice::getQueues() {
     return mQueues;
+}
+
+VulkanQueue& VulkanDevice::getQueue(uint32_t queuefamilyIndex, uint32_t queueIndex) {
+    return mQueues[queuefamilyIndex][queueIndex];
+}
+
+VulkanQueue& VulkanDevice::getQueueByFlags(VkQueueFlags requiredQueueFlags, uint32_t queueIndex) {
+    for(uint32_t queueFamilyIndex = 0; queueFamilyIndex < mQueues.size(); ++queueFamilyIndex) {
+        VulkanQueue& firstQueue = mQueues[queueFamilyIndex][0];
+        VkQueueFlags queueFlags = firstQueue.getProperties().queueFlags;
+        uint32_t queueCount = firstQueue.getProperties().queueCount;
+        if(((queueFlags & requiredQueueFlags) == requiredQueueFlags) && queueIndex < queueCount) {
+            return mQueues[queueFamilyIndex][queueIndex];
+        }
+    }
+    throw std::runtime_error("Queue not found");
+}
+
+VulkanQueue& VulkanDevice::getSuitableGraphicsQueue() {
+    for(uint32_t queueFamilyIndex = 0; queueFamilyIndex < mQueues.size(); ++queueFamilyIndex) {
+        VulkanQueue& firstQueue = mQueues[queueFamilyIndex][0];
+        uint32_t queueCount = firstQueue.getProperties().queueCount;
+        if(firstQueue.getCanPresent() && queueCount > 0) {
+            return mQueues[queueFamilyIndex][0];
+        }
+    }
+    return getQueueByFlags(VK_QUEUE_GRAPHICS_BIT, 0);
 }
 
 bool VulkanDevice::isExtensionSupported(const std::string& requestedExtension) {

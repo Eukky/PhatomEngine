@@ -31,10 +31,14 @@ set(GRAPHICS_FILES
     Graphics/VulkanInstance.h
     Graphics/VulkanPhysicalDevice.h
     Graphics/VulkanConfig.h
+    Graphics/VulkanQueue.h
+    Graphics/VulkanSwapChain.h
     
     Graphics/VulkanDevice.cpp
     Graphics/VulkanInstance.cpp
-    Graphics/VulkanPhysicalDevice.cpp)
+    Graphics/VulkanPhysicalDevice.cpp
+    Graphics/VulkanQueue.cpp
+    Graphics/VulkanSwapChain.cpp)
 
 source_group(Common FILES ${COMMON_FILES})
 

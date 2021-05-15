@@ -30,23 +30,9 @@
 #include <set>
 #include <unordered_map>
 
+#include "Graphics/VulkanConfig.h"
+
 namespace phatom {
-VkResult CreateDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkDebugUtilsMessengerEXT* pDebugMessenger) {
-    auto func = (PFN_vkCreateDebugUtilsMessengerEXT) vkGetInstanceProcAddr(instance, "vkCreateDebugUtilsMessengerEXT");
-    if (func != nullptr) {
-        return func(instance, pCreateInfo, pAllocator, pDebugMessenger);
-    } else {
-        return VK_ERROR_EXTENSION_NOT_PRESENT;
-    }
-}
-
-void DestroyDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMessengerEXT debugMessenger, const VkAllocationCallbacks* pAllocator) {
-    auto func = (PFN_vkDestroyDebugUtilsMessengerEXT) vkGetInstanceProcAddr(instance, "vkDestroyDebugUtilsMessengerEXT");
-    if (func != nullptr) {
-        func(instance, debugMessenger, pAllocator);
-    }
-}
-
 void Application::setVertices(std::vector<glm::vec3> position) {
     int size = position.size();
     for(const auto& p : position) {
@@ -182,12 +168,9 @@ void Application::cleanup() {
 
     vkDestroyDevice(device, nullptr);
 
-    if (enableValidationLayers) {
-        DestroyDebugUtilsMessengerEXT(instance, debugMessenger, nullptr);
-    }
-
     vkDestroySurfaceKHR(instance, surface, nullptr);
-    vkDestroyInstance(instance, nullptr);
+
+    delete mInstance;
 
     mWindow->destoryWindow();
 
@@ -219,7 +202,7 @@ void Application::recreateSwapChain() {
 
 
 void Application::createInstance() {
-    mInstance = new VulkanInstance("Hello Triangle", validationLayers, getRequiredExtensions());
+    mInstance = new VulkanInstance("Hello Triangle", kValidationLayers, getRequiredExtensions());
     instance = mInstance->getHandle();
 }
 
@@ -231,10 +214,9 @@ void Application::createDevice() {
     VulkanPhysicalDevice gpu = mInstance->getSuitableGPU();
     physicalDevice = gpu.getHandle();
     msaaSamples = getMaxUsableSampleCount();
-    mDevice = new VulkanDevice(gpu, surface, mDeviceExtensions, validationLayers);
-    std::vector<VkQueue> queues = mDevice->getQueues();
-    graphicsQueue = queues[0];
-    presentQueue = queues[1];
+    mDevice = new VulkanDevice(gpu, surface, mDeviceExtensions, kValidationLayers);
+    graphicsQueue = mDevice->getSuitableGraphicsQueue().getHandle();
+    presentQueue = mDevice->getSuitableGraphicsQueue().getHandle();
     device = mDevice->getHandle();
 }
 
@@ -1369,38 +1351,38 @@ SwapChainSupportDetails Application::querySwapChainSupport(VkPhysicalDevice devi
     return details;
 }
 
-bool Application::isDeviceSuitable(VkPhysicalDevice device) {
-    QueueFamilyIndices indices = findQueueFamilies(device);
-
-    bool extensionsSupported = checkDeviceExtensionSupport(device);
-
-    bool swapChainAdequate = false;
-    if (extensionsSupported) {
-        SwapChainSupportDetails swapChainSupport = querySwapChainSupport(device);
-        swapChainAdequate = !swapChainSupport.formats.empty() && !swapChainSupport.presentModes.empty();
-    }
-
-    VkPhysicalDeviceFeatures supportedFeatures;
-    vkGetPhysicalDeviceFeatures(device, &supportedFeatures);
-
-    return indices.isComplete() && extensionsSupported && swapChainAdequate && supportedFeatures.samplerAnisotropy;
-}
-
-bool Application::checkDeviceExtensionSupport(VkPhysicalDevice device) {
-    uint32_t extensionCount;
-    vkEnumerateDeviceExtensionProperties(device, nullptr, &extensionCount, nullptr);
-
-    std::vector<VkExtensionProperties> availableExtensions(extensionCount);
-    vkEnumerateDeviceExtensionProperties(device, nullptr, &extensionCount, availableExtensions.data());
-
-    std::set<std::string> requiredExtensions(deviceExtensions.begin(), deviceExtensions.end());
-
-    for (const auto& extension : availableExtensions) {
-        requiredExtensions.erase(extension.extensionName);
-    }
-
-    return requiredExtensions.empty();
-}
+//bool Application::isDeviceSuitable(VkPhysicalDevice device) {
+//    QueueFamilyIndices indices = findQueueFamilies(device);
+//
+//    bool extensionsSupported = checkDeviceExtensionSupport(device);
+//
+//    bool swapChainAdequate = false;
+//    if (extensionsSupported) {
+//        SwapChainSupportDetails swapChainSupport = querySwapChainSupport(device);
+//        swapChainAdequate = !swapChainSupport.formats.empty() && !swapChainSupport.presentModes.empty();
+//    }
+//
+//    VkPhysicalDeviceFeatures supportedFeatures;
+//    vkGetPhysicalDeviceFeatures(device, &supportedFeatures);
+//
+//    return indices.isComplete() && extensionsSupported && swapChainAdequate && supportedFeatures.samplerAnisotropy;
+//}
+//
+//bool Application::checkDeviceExtensionSupport(VkPhysicalDevice device) {
+//    uint32_t extensionCount;
+//    vkEnumerateDeviceExtensionProperties(device, nullptr, &extensionCount, nullptr);
+//
+//    std::vector<VkExtensionProperties> availableExtensions(extensionCount);
+//    vkEnumerateDeviceExtensionProperties(device, nullptr, &extensionCount, availableExtensions.data());
+//
+//    std::set<std::string> requiredExtensions(kDeviceExtensions.begin(), kDeviceExtensions.end());
+//
+//    for (const auto& extension : availableExtensions) {
+//        requiredExtensions.erase(extension.extensionName);
+//    }
+//
+//    return requiredExtensions.empty();
+//}
 
 QueueFamilyIndices Application::findQueueFamilies(VkPhysicalDevice device) {
     QueueFamilyIndices indices;
@@ -1448,30 +1430,6 @@ std::vector<const char*> Application::getRequiredExtensions() {
     return extensions;
 }
 
-bool Application::checkValidationLayerSupport() {
-    uint32_t layerCount;
-    vkEnumerateInstanceLayerProperties(&layerCount, nullptr);
-
-    std::vector<VkLayerProperties> availableLayers(layerCount);
-    vkEnumerateInstanceLayerProperties(&layerCount, availableLayers.data());
-
-    for (const char* layerName : validationLayers) {
-        bool layerFound = false;
-
-        for (const auto& layerProperties : availableLayers) {
-            if (strcmp(layerName, layerProperties.layerName) == 0) {
-                layerFound = true;
-                break;
-            }
-        }
-
-        if (!layerFound) {
-            return false;
-        }
-    }
-
-    return true;
-}
 
 std::vector<char> Application::readFile(const std::string& filename) {
     std::ifstream file(filename, std::ios::ate | std::ios::binary);
@@ -1489,12 +1447,6 @@ std::vector<char> Application::readFile(const std::string& filename) {
     file.close();
 
     return buffer;
-}
-
-VKAPI_ATTR VkBool32 VKAPI_CALL Application::debugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity, VkDebugUtilsMessageTypeFlagsEXT messageType, const VkDebugUtilsMessengerCallbackDataEXT* pCallbackData, void* pUserData) {
-    std::cerr << "validation layer: " << pCallbackData->pMessage << std::endl;
-
-    return VK_FALSE;
 }
     
 } // namespace phatom

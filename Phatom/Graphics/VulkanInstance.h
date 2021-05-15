@@ -4,6 +4,7 @@
 #include <Vulkan/Vulkan.h>
 #include <vector>
 #include "VulkanPhysicalDevice.h"
+
 namespace phatom {
 class VulkanInstance {
 public:
@@ -29,7 +30,6 @@ private:
     std::vector<const char*> mValidationLayers;
     std::vector<const char*> mExtensions;
     VkDebugUtilsMessengerEXT mDebugMessenger;
-    bool mIsDebug;
 };
 
 } // namespace phatom

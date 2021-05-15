@@ -240,19 +240,15 @@ private:
 
     SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device);
 
-    bool isDeviceSuitable(VkPhysicalDevice device);
+//    bool isDeviceSuitable(VkPhysicalDevice device);
 
-    bool checkDeviceExtensionSupport(VkPhysicalDevice device);
+//    bool checkDeviceExtensionSupport(VkPhysicalDevice device);
 
     QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device);
 
     std::vector<const char*> getRequiredExtensions();
 
-    bool checkValidationLayerSupport();
-
     static std::vector<char> readFile(const std::string& filename);
-
-    static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity, VkDebugUtilsMessageTypeFlagsEXT messageType, const VkDebugUtilsMessengerCallbackDataEXT* pCallbackData, void* pUserData);
 
 private:
     Window* mWindow;

@@ -1,19 +1,26 @@
 #include "VulkanInstance.h"
 #include <iostream>
 #include <stdexcept>
+#include "VulkanConfig.h"
 namespace phatom {
 VulkanInstance::VulkanInstance(const char* applicationName, std::vector<const char*> validationLayers, std::vector<const char *> extensions) :
 mApplicationName(applicationName),
 mValidationLayers(validationLayers),
-mExtensions(extensions),
-mIsDebug(false){
+mExtensions(extensions){
     createInstance();
     setupDebugMessenger();
     quaryGPUs();
 }
 
 VulkanInstance::~VulkanInstance() {
-
+    if(kEnableDebug) {
+        if(mDebugMessenger != VK_NULL_HANDLE) {
+            destroyDebugUtilsMessengerEXT(mHandle, mDebugMessenger, nullptr);
+        }
+    }
+    if(mHandle != VK_NULL_HANDLE) {
+        vkDestroyInstance(mHandle, nullptr);
+    }
 }
 
 VkInstance VulkanInstance::getHandle() {
@@ -21,7 +28,7 @@ VkInstance VulkanInstance::getHandle() {
 }
 
 VkResult VulkanInstance::createInstance() {
-    if(mIsDebug && !checkValidationLayerSupport(mValidationLayers)) {
+    if(kEnableDebug && !checkValidationLayerSupport(mValidationLayers)) {
         throw std::runtime_error("validation layers requested, but not available!");
     }
     
@@ -40,7 +47,7 @@ VkResult VulkanInstance::createInstance() {
     createInfo.ppEnabledExtensionNames = mExtensions.data();
     
     
-    if(mIsDebug) {
+    if(kEnableDebug) {
         createInfo.enabledLayerCount = static_cast<uint32_t>(mValidationLayers.size());
         createInfo.ppEnabledLayerNames = mValidationLayers.data();
         
@@ -87,7 +94,7 @@ VulkanPhysicalDevice VulkanInstance::getSuitableGPU() {
 }
 
 void VulkanInstance::setupDebugMessenger() {
-    if (!mIsDebug) return;
+    if (!kEnableDebug) return;
 
     VkDebugUtilsMessengerCreateInfoEXT createInfo;
     populateDebugMessengerCreateInfo(createInfo);

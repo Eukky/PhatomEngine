@@ -5,9 +5,6 @@
 #include <vector>
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
-
-//#include "Window.h"
-//#include <VulkanDevice.h>
 #include "Common/File.h"
 
 namespace phatom {
